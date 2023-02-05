@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>Amount</p>
+<label><input id="dauvao" type="number" name="amount" value=""></label>
+
+
+
+<p>From Currency</p>
+<select name="tich" id="select1">
+    <option value="a">VND</option>
+    <option value="b">USD</option>
+
+</select>
+
+ <p>To Currency</p>
+<select name="chon" id="select2">
+    <option value="a">VND</option>
+    <option value="b">USD</option>
+    <option value="c">KRW</option>
+
+</select>
+<button type="button" onclick="hienthi()">convert</button>
+<script>
+ function hienthi() {
+        let giatrivao = document.getElementById('dauvao').value;
+        let select1 = document.getElementById('select1').value;
+        let select2 = document.getElementById('select2').value;
+      if (select1 == select2){
+          alert(giatrivao);
+      }
+        if (select1 == "a" && select2 == "b") {
+            alert(giatrivao/24000);
+     }
+        if (select1 == "a" && select2 == "c") {
+            alert(giatrivao/18.79)
+        }
+  }
+    
+</script>
+
+
+
+</body>
+</html>
