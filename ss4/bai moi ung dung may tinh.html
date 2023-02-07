@@ -6,17 +6,63 @@
 </head>
 <body>
 <h1>Calculator</h1>
- 
+ <input  id="dauvao"   name="so" type="number" value=""><br>
+<input id="dauvao1" name="so1" type="number" value=""><br>
 
-<button type="button" onclick="hienthi()">addition+</button>
-<button type="button" onclick="hienthi()">addition-</button>
-<button type="button" onclick="hienthi()">addition*</button>
-<button type="button" onclick="hienthi()">addition/</button>
+<button id="cong" type="button" onclick="hienthi1()">addition+</button>
+<button id="tru" type="button" onclick="hienthi2()">addition-</button>
+<button id="nhan" type="button" onclick="hienthi3()">addition*</button>
+<button id="chia" type="button" onclick="hienthi4()">addition/</button><br>
+
+<h3 id="ketqua">Result Division</h3>
+
+
+
 <script>
-    function hienthi() {
+   function hienthi1() {
+       let giatrivao = document.getElementById('dauvao').value;
+       let giatrivao1 = document.getElementById('dauvao1').value;
+       let giatri1 = parseInt(giatrivao);
+       let giatri2 = parseInt(giatrivao1);
+       let ketqua1 = (giatri1 + giatri2);
+       document.getElementById('ketqua').innerHTML = "Result Division : " + ketqua1 ;
 
-    }
+
+   }
+   function hienthi2() {
+       let giatrivao = document.getElementById('dauvao').value;
+       let giatrivao1 = document.getElementById('dauvao1').value;
+       let giatri1 = parseInt(giatrivao);
+       let giatri2 = parseInt(giatrivao1);
+       let ketqua2 = (giatri1 + giatri2);
+       document.getElementById('ketqua').innerHTML = "Result Division : " + ketqua2 ;
+
+   }
+
+   function hienthi3() {
+       let giatrivao = document.getElementById('dauvao').value;
+       let giatrivao1 = document.getElementById('dauvao1').value;
+       let giatri1 = parseInt(giatrivao);
+       let giatri2 = parseInt(giatrivao1);
+       let ketqua3 = (giatri1 * giatri2);
+       document.getElementById('ketqua').innerHTML = "Result Division : " + ketqua3 ;
+
+   }
+
+   function hienthi4() {
+       let giatrivao = document.getElementById('dauvao').value;
+       let giatrivao1 = document.getElementById('dauvao1').value;
+       let giatri1 = parseInt(giatrivao);
+       let giatri2 = parseInt(giatrivao1);
+       let ketqua3 = (giatri1 / giatri2);
+       document.getElementById('ketqua').innerHTML = "Result Division : " + ketqua4 ;
+   }
+
+
+
 </script>
+
+
 
 
 </body>
