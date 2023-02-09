@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<body>
+<script>
+    let giabansanpham = +prompt('nhập giá bán của sản phẩm ');
+    let hoahong = 0;
+    let doanhthuconlai = 0;
+
+     if (giabansanpham < 2_000_000){
+         hoahong = giabansanpham * 3/100;
+
+     }else{
+         if (giabansanpham >= 2_000_000 && giabansanpham < 5_000_000 ){
+             doanhthuconlai = giabansanpham - 2_000_000
+             hoahong = (doanhthuconlai * 5/100) + (2_000_000 * 3/100);
+             document.write('Tiền hoa hồng là '+hoahong);
+         }else {
+             doanhthuconlai = giabansanpham - 5_000_000
+             hoahong = (doanhthuconlai * 10/100) + (2_000_000 * 3/100)+ (3_000_000*5/100);
+             document.write('Tiền hoa hồng là '+hoahong);
+         }
+     }
+</script>
+
+</body>
+</html>
