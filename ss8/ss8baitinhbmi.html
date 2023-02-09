@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiểm tra chỉ số BMI</h1>
+<p>Nhập cân nặng : (kg)</p>
+<input type="number" id="cannang" size="80px" value="">
+<p>Nhập chiều cao : (m)</p>
+<input type="number" id="chieucao" size="80px" value="">
+
+<button type="button" name="1" onclick="kiemtra()" >Kiểm tra</button>
+<p name="result"></p>
+<script>
+    function kiemtra() {
+
+        let height1 = document.getElementById('chieucao').value;
+        let weight1 = document.getElementById('cannang').value;
+        let bmi = Number(weight1) /(Math.pow(height1 , 2));
+
+        if ( bmi < 18.5 ){
+            document.write('Chỉ số bmi của bạn là :  ' + bmi + '.Bạn thiếu cân. ');
+
+        }else{
+            if ( bmi >= 18.5 && bmi <25 ){
+            document.write('Chỉ số bmi của bạn là :' + bmi + '.Bạn bình thường.');
+            }
+            else {
+                if( bmi >= 25 && bmi < 30  ) {
+                    document.write('Chỉ số bmi của bạn là :  ' +bmi + '.Bạn quá cân ');
+                }
+                else {
+                    document.write('Chỉ số bmi của bạn là :  ' + bmi + 'Bạn bị béo phì ');
+                    }
+
+                }
+            }
+
+
+
+
+    }
+
+
+
+</script>
+</body>
+</html>

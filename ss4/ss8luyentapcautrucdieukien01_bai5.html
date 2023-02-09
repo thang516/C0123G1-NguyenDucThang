@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+<script>
+    let midterm_score = +prompt('nhập điểm thi giữa kì của bạn ');
+    let  term_and_point = +prompt('Nhập điểm thi cuối kì của bạn ');
+    let  diemtrungbinhcanam = (midterm_score + term_and_point)/2;
+    if (diemtrungbinhcanam >= 8.0){
+        document.write('Học sinh có  học lực  giỏi');
+    }else{
+        if ( diemtrungbinhcanam >= 6.5 || diemtrungbinhcanam < 8){
+            document.write('Học sinh có học lực khá ');
+        }else {
+            if (diemtrungbinhcanam >= 4.5 || diemtrungbinhcanam <6.5 ){
+                document.write('Học sinh có học lực trung bính ');
+            }else {
+                document.write('Học sinh có học lực yếu ');
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
