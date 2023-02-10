@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai7</title>
+</head>
+<body>
+
+<script>
+    let giaTriA  = +prompt('Nhập  giá trị a ');
+    let giaTriB  = +prompt('Nhập giá trị  b ');
+    let giaTriC = +prompt('Nhap gia tri c ');
+    let deltal = (Math.pow(giaTriB , 2 ) )- (4 * giaTriA* giaTriC);
+
+    let nghiemX1 = (- giaTriB + Math.sqrt(deltal) ) / 2*giaTriA ;
+    let nghiemX2 = (-giaTriB - Math.sqrt(deltal)) / 2*giaTriA ;
+     let nghiemX3 = (-giaTriB) / (2 *giaTriA);
+
+     if(deltal >0 ){
+         document.write('Phương trình có 2 nghiệm  là :'  + nghiemX1 +  ' và ' +  + nghiemX2 );
+     }else{
+         if( deltal = 0 ){
+             document.write('Phương trình có nghiệm kép là '  + nghiemX3);
+         }else{
+             document.write('Phương trình đã cho vô nghiệm ');
+         }
+     }
+</script>
+
+
+
+</body>
+</html>

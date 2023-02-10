@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<!-- - Đơn từ 0 đến 2.000.000đ, nhận 3% trên tổng đơn-->
+
+<!-- - Đơn từ 2.000.000 đến 5000.000đ, nhận 5% trên tổng đơn-->
+
+<!-- - Đơn trên 5.000.000đ, nhận 10% trên tổng đơn-->
+
+<!--Nếu nhân viên bán được hóa đơn 3.000.000đ thì hoa hồng sẽ là:-->
+
+<!--Hoa hồng = 2.000.000 x 3% + 1.000.000 x 5% = 53.000-->
+
+
+<!--Nếu nhân viên bán được hóa đơn 8.000.000đ thì hoa hồng sẽ là:-->
+
+<!--Hoa hồng = 2.000.000 x 3% + 1.000.000 x 5% + 3tr * 10%-->
+<body>
+
+<script>
+    let giatiensanpham = prompt('Nhập giá tiền sản phẩm ');
+    let hoahong = 0;
+    let soducuagiatien = 0;
+    if ( giatiensanpham < 2_000_000 ){
+        hoahong = giatiensanpham * 3/100
+        document.write('Số tiền hoa hồng là ' + hoahong)
+    }else{
+        if ( giatiensanpham >= 2_000_000 && giatiensanpham < 5_000_000){
+            soducuagiatien = giatiensanpham - 2_000_000;
+            hoahong = (soducuagiatien * 5/100) + (2_000_000 * 3/100);
+        }else{
+            soducuagiatien = giatiensanpham - 5_000_000 ;
+            hoahong = (soducuagiatien * 10/100)+(2_000_000 *3/100)+(3_000_000*5/100);
+
+        }
+    }
+</script>
+</body>
+</html>

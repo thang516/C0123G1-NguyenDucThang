@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<body>
+
+
+<script>
+        let giaTriA = +prompt('Nhập số a');
+        let giaTriB = +prompt('Nhập số b');
+        let ketQuaX =( - giaTriB / giaTriA);
+
+        if( giaTriA === 0){
+            if (giaTriB === 0 ){
+            document.write('Phương trình vô số nghiệm ');
+            }else{
+                document.write('Phương trình vô nghiệm ');
+            }
+        }else{
+            document.write('Phương trình có nghiệm là ' + ketQuaX);
+        }
+</script>
+</body>
+</html>

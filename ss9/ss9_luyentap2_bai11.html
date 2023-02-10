@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai11</title>
+</head>
+<body>
+<script>
+    // camelCase
+ let thuNhapCaNhan = +prompt('Nhập tiền lương của ban ');
+let thuNhapCaNhanDuoi5tr = (thuNhapCaNhan *5/100);
+let thuNhapCaNhanTu5TrDen10Tr =  (thuNhapCaNhan *10/100 )-250000 ;
+let thuNhapCaNhanTu10TrDen18Tr = (thuNhapCaNhan * 15/100 )-750000 ;
+let thuNhapCaNhanTu18TrDen32Tr =  (thuNhapCaNhan * 20/100 ) - 1650000 ;
+let thuNhapCaNhanTu32TrDen52Tr =  (thuNhapCaNhan * 25/100) -3250000 ;
+let thuNhapCaNhanTu52TrDen80Tr =   ((thuNhapCaNhan * 30/100) -5850000) ;
+let thuNhapCaNhanTren80Tr =  (thuNhapCaNhan *35/100)-9850000 ;
+ if ( thuNhapCaNhan > 0 && thuNhapCaNhan <= 5000000){
+     document.write('Thuế thu nhập cá nhân  bạn phải đóng là : '+thuNhapCaNhanDuoi5tr);
+ }else{
+     if(thuNhapCaNhan >5000000 && thuNhapCaNhan <= 10000000){
+        document.write('Thuế thu nhập cá nhân bạn phải đóng là : '+thuNhapCaNhanTu5TrDen10Tr);
+     }else{
+         if(thuNhapCaNhan > 1000000 && thuNhapCaNhan <= 18000000){
+             document.write('Thuế thu nhập cá nhân bạn phải đóng là : '+thuNhapCaNhanTu10TrDen18Tr);
+         }else{
+             if (thuNhapCaNhan> 18000000 && thuNhapCaNhan <= 32000000 ){
+                 document.write('Thuế thu  nhập cá nhân bạn phải đóng là : ' +thuNhapCaNhanTu18TrDen32Tr);
+             }else {
+                 if (thuNhapCaNhan > 32000000 && thuNhapCaNhan <= 52000000){
+                    document.write('Thuế thu  nhập cá nhân bạn phải đóng là : '+thuNhapCaNhanTu32TrDen52Tr);
+                 }else{
+                     if(thuNhapCaNhan > 52000000 && thuNhapCaNhan <=80000000){
+                        document.write('Thuế thu nhập cá nhân bạn phải đóng là : '+thuNhapCaNhanTu52TrDen80Tr);
+                     }else{
+                         document.write('Thuế thu nhập cá nhân của bạn phải đóng là :'+thuNhapCaNhanTren80Tr);
+                         }
+                     }
+                 }
+             }
+         }
+
+ }
+
+</script>
+</body>
+</html>

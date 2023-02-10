@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai10</title>
+</head>
+<body>
+
+<script>
+    let soDienThang = +prompt('Nhập số điện tháng này của nhà bạn');
+    let giaDienDuoi50Kwh = soDienThang * 1.678;
+    let luuTruTienDienMuc1 = (soDienThang - 50);
+    let giaDienTu51Den100Kwh = luuTruTienDienMuc1*1.734  + (50 *1.678);
+    let luuTruTienDienMuc2 = (soDienThang + -100);
+    let giaDienTu101Den200Kwh =   (luuTruTienDienMuc2 * 2.014) + (50 * 1.675) + (50*1.734) ;
+    let luuTruTienDienMuc3 = (soDienThang-200);
+    let giaDienTu201Den300Kwh = (luuTruTienDienMuc3 *2.536)+(50*1.678) + (50*1.734) + (100*2.014) ;
+    let luuTruTienDienMuc4 = (soDienThang -300);
+    let giaDienTu301Den400Kwh = (luuTruTienDienMuc4 * 2.834)+(50 *1.678)+(50*1.734)+(100*2.014)+(100*2.536);
+    let luuTruTienDienMuc5 = (soDienThang - 400);
+    let giaDienTren401Kwh = (luuTruTienDienMuc5 *2927)+(50*1.678)+(50*1.734)+(100*2.014)+(100*2.536)+(100*2.834);
+    if (soDienThang <= 50 ){
+        document.write('Tiền điện tháng này là : '+ giaDienDuoi50Kwh );
+    }else {
+            if (soDienThang > 50 && soDienThang <= 100  ){
+                document.write('Tiền điện tháng này là :'+ giaDienTu51Den100Kwh );
+            }else{
+                if(soDienThang > 100 &&soDienThang<= 200){
+                    document.write('Tiền điện tháng này là : ' +giaDienTu101Den200Kwh);
+                }else{
+                    if( soDienThang > 200 && soDienThang <= 300){
+                        document.write('Tiền điện tháng này là : '+giaDienTu201Den300Kwh);
+                    }else{
+                        if (soDienThang > 300 && soDienThang <= 400 ){
+                            document.write('Tiền điện tháng này là : '+giaDienTu301Den400Kwh);
+                        }else {
+                            document.write('Tiền điện tháng này là : '+ giaDienTren401Kwh );
+                        }
+                    }
+                }
+            }
+    }
+</script>
+
+
+
+
+</body>
+</html>
