@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai8</title>
+</head>
+<body>
+<button onclick="choi()">Bắt đầu</button>
+<script>
+    function choi() {
+    let khoang = +prompt('Bạn muốn đoán trong khoảng nào');
+    let ketqua =Math.floor(Math.random()*khoang);
+    let duDoan = +prompt("Nhập số bạn đoán");
+    for(let i=1;i<=3;i++){
+        if(ketqua==duDoan){
+            alert('Chúc mừng bạn và kết thúc lượt chơi');
+            break;
+        }else{
+            if(ketqua>duDoan){
+                alert('số bạn đoán bé hơn')
+            }else{
+                alert('Số bạn đoán lớn hơn')
+            }
+            if(i<3){
+                duDoan = +prompt("Nhập số bạn đoán");
+
+            }
+        }
+    }
+
+
+    }
+</script>
+</body>
+</html>
