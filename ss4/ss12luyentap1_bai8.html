@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai8</title>
+</head>
+<body>
+<script>
+    let arr=[3,9,8,10,66,60,88,70,80,100];
+    for(let i=0;i<arr.length;i++){
+        for(let n=i+1;n<arr.length;n++){
+            if(arr[i]<arr[n]){
+                let luuTru=arr[i]
+                arr[i]= arr[n]
+                arr[n]=luuTru
+            }
+        }
+    }
+    console.log(arr);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<label><input id="nhap" type="text" size="30px" placeholder="nhập từ"></label>
+<button type="submit" onclick="kiemtra()">Dịch</button>
+<script>
+   function kiemtra() {
+       let giaTri =document.getElementById('nhap').value;
+       let arr1=["apple","hello","play","money"];
+       let arr2=["táo","xinchao","chơi","tiền"];
+       for (let i = 0; i < arr1.length; i++) {
+           if(giaTri===arr1[i]){
+               console.log(arr2[i])
+           }
+       }
+   }
+</script>
+</body>
+</html>

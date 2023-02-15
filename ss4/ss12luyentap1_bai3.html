@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    let arr=[2,4,6,8,10,12,16,22,44,68,18,42,];
+    let max=arr[0];
+    let result=0;
+    let total =0;
+    for(let i=0;i<arr.length;i++){
+        total=total+arr[i];
+        if(max<arr[i]){
+            max=arr[i];
+            result=i;
+        }
+    }
+    giaTriTrungBinh=total/arr.length;
+    document.write('Giá trị trung bình là:' + giaTriTrungBinh+'<br>');
+    document.write('Số lớn nhất là'+max);
+    document.write('<br>'+"Số lớn nhất là" +result);
+
+</script>
+</body>
+</html>
