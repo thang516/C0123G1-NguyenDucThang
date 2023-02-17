@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    let numbA = +prompt('Nhập vô số thứ 1');
+    let numbB = +prompt('Nhập vô số thứ 2');
+
+    function isValidNumb(numb1, numb2) {
+        if (numb1 > numb2) {
+            alert('Số 1 lớn hơn số 2');
+        } else {
+            document.write('Tổng của hai số là : ' + (numb1 + numb2));
+        }
+    }
+
+    isValidNumb(numbA,numbB);
+</script>
+</body>
+</html>
