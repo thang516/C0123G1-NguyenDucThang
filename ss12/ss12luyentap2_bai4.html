@@ -6,14 +6,22 @@
 </head>
 <body>
 <script>
-    let counter=0
-    let str="HelloGuy123344"
-    for(let i=0;i<str.length;i++){
-        if(isNaN(str[i])){
-            counter++
+    let str = "Hello Guy 123344"
+    let luuTru = '';
+    let arr = [];
+    for (let j = 0; j < str.length; j++) {
+        if (str[j] === ' ') {
+            arr.push(luuTru);
+            luuTru = '';
+        } else {
+            luuTru = luuTru + str[j];
+        }
+        if (j === str.length - 1 && str[j] !== ' ') {
+            arr.push(luuTru);
         }
     }
-    console.log(counter)
+
+    console.log(arr)
 </script>
 </body>
 </html>
