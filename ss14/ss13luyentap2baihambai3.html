@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    let soNguyenBatKi = +prompt('Nhập vào số nguyên');
+
+    function tinhGiaiThua(soNguyen) {
+        if (soNguyen === 0) {
+            return 1;
+        }
+        return soNguyen * tinhGiaiThua(soNguyen - 1);
+    }
+
+    let result = tinhGiaiThua(soNguyenBatKi);
+    document.write(result);
+</script>
+</body>
+</html>

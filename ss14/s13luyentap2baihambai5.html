@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+<script>
+    let numberA = +prompt('Nhập số đầu tiên');
+    let numberB = +prompt('Nhập số thứ 2');
+    let numberC = +prompt('Nhập số thứ 3');
+
+    function checkNumber(number1, number2, number3) {
+        if (number1 == number2 && number2 == number3) {
+            document.write("3 số bằng nhau ");
+        } else {
+            if (number1 < number2 && number2 < number3) {
+                document.write(number1 + 'Là giá trị nhỏ nhất');
+            } else {
+                if (number2 < number1 && number2 < number3) {
+                    document.write(number2 + 'Là giá trị nhỏ nhất');
+                } else {
+                    if (number3 < number1 && number3 < number2) {
+                        document.write(number3 + 'là giá trị nhỏ  nhất');
+                    }
+
+                }
+            }
+        }
+    }
+
+    checkNumber(numberA, numberB, numberC);
+</script>
+</body>
+</html>

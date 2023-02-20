@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai6</title>
+</head>
+<body>
+<script>
+    let number = +prompt('Nhập vào số bạn muốn kiểm tra');
+
+    function checkNumber(number1) {
+        if (number1 > 0 && number1 % 1 === 0) {
+            document.write('Là số nguyên dương ');
+        } else {
+            document.write('Không phải là số nguyên dương ');
+        }
+    }
+
+    checkNumber(number);
+</script>
+</body>
+</html>
