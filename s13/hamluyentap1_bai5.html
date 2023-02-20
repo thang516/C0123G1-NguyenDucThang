@@ -9,16 +9,18 @@
     let arr1 = ["Polaris", 'Aldebaran', "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
     let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa", "Major", "Leo"];
     let input = prompt('Nhập vào ngôi sao');
-    function addStar() {
-        for(let i=0;i<arr1.length;i++){
-            if(input===arr1[i]){
+
+    function addStar(star) {
+        for (let i = 0; i < arr1.length; i++) {
+            if (star === arr1[i]) {
                 document.write(arr2[i]);
                 return arr2[i];
             }
         }
         document.write('Không tìm thấy ngôi sao');
     }
-    addStar();
+
+    addStar(input);
 </script>
 </body>
 </html>

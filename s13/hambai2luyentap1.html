@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <title>bai2</title>
 </head>
-<body onload="onLoad()">
+<body>
 <script>
-    function onLoad() {
-        let numA = +prompt('Nhập số');
+    let numA = +prompt('Nhập số');
 
-        function checkNumber(num1) {
-            return num1 + 1;
-        }
-
-        let result = checkNumber(numA);
-        document.write(result);
+    function checkNumber(num1) {
+        return num1 + 1;
     }
+
+    let result = checkNumber(numA);
+    document.write(result);
 
 </script>
 </body>
