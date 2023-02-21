@@ -13,11 +13,12 @@
         width;
         acreage;
         perimeter;
-        constructor(length, width,acreage,perimeter) {
+
+        constructor(length, width, acreage, perimeter) {
             this.length = length;
             this.width = width;
-            this.acreage= acreage;
-            this.perimeter=perimeter;
+            this.acreage = acreage;
+            this.perimeter = perimeter;
         }
 
         getLength() {
@@ -44,10 +45,12 @@
         getAcreage() {
             return this.acreage;
         }
-        setPerimeter(width,length) {
-             this.perimeter = (width + length) * 2
+
+        setPerimeter(width, length) {
+            this.perimeter = (width + length) * 2;
         }
-        getPerimeter(){
+
+        getPerimeter() {
             return this.perimeter;
         }
 
@@ -60,13 +63,13 @@
     }
 
     let a = +prompt('Nhập chiều dài');
-    let b = +prompt('Nhập chiều rộng')
+    let b = +prompt('Nhập chiều rộng');
     let myRectangle = new Rectangle(a, b);
     myRectangle.drawCanvas();
     let length = myRectangle.getLength();
     let width = myRectangle.getWidth();
     myRectangle.setAcreage(myRectangle.width, myRectangle.length);
-    myRectangle.setPerimeter(myRectangle.width,myRectangle.length);
+    myRectangle.setPerimeter(myRectangle.width, myRectangle.length);
 
     document.write('<br/>');
     document.write('Chiều dài là :' + length);
@@ -80,11 +83,11 @@
     document.write('Chu vi là :' + myRectangle.getPerimeter());
 
     function changeSize() {
-        let newLength = prompt("nhap height")
-        let newWidth = prompt("nhap height")
+        let newLength = prompt("nhap height");
+        let newWidth = prompt("nhap height");
         myRectangle.setLength(newLength);
         myRectangle.setWidth(newWidth);
-        myRectangle.drawCanvas()
+        myRectangle.drawCanvas();
     }
 </script>
 </body>
