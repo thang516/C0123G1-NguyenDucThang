@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<canvas id="myCanvas" style="height: 50%; width: 50%"></canvas>
+<button onclick="changeSize()">Đổi Kích thước</button>
+<script>
+    class Rectangle {
+        length;
+        width;
+        acreage;
+        perimeter;
+        constructor(length, width,acreage,perimeter) {
+            this.length = length;
+            this.width = width;
+            this.acreage= acreage;
+            this.perimeter=perimeter;
+        }
+
+        getLength() {
+            return this.length;
+        }
+
+        setLength(length) {
+            this.length = length;
+        }
+
+        getWidth() {
+            return this.width;
+        }
+
+        setWidth(width) {
+            this.width = width;
+        }
+
+        setAcreage(length, width) {
+            this.acreage = length * width;
+        }
+
+
+        getAcreage() {
+            return this.acreage;
+        }
+        setPerimeter(width,length) {
+             this.perimeter = (width + length) * 2
+        }
+        getPerimeter(){
+            return this.perimeter;
+        }
+
+        drawCanvas() {
+            let paint = document.getElementById('myCanvas');
+            let ctx = paint.getContext('2d');
+            ctx.fillStyle = '#C71585';
+            ctx.fillRect(10, 20, this.length, this.width);
+        }
+    }
+
+    let a = +prompt('Nhập chiều dài');
+    let b = +prompt('Nhập chiều rộng')
+    let myRectangle = new Rectangle(a, b);
+    myRectangle.drawCanvas();
+    let length = myRectangle.getLength();
+    let width = myRectangle.getWidth();
+    myRectangle.setAcreage(myRectangle.width, myRectangle.length);
+    myRectangle.setPerimeter(myRectangle.width,myRectangle.length);
+
+    document.write('<br/>');
+    document.write('Chiều dài là :' + length);
+    document.write('<br/>');
+    document.write('chiều rộng là :' + width);
+    document.write('<br/>');
+
+    document.write('Diện tích là : ' + myRectangle.getAcreage());
+    document.write('<br/>');
+
+    document.write('Chu vi là :' + myRectangle.getPerimeter());
+
+    function changeSize() {
+        let newLength = prompt("nhap height")
+        let newWidth = prompt("nhap height")
+        myRectangle.setLength(newLength);
+        myRectangle.setWidth(newWidth);
+        myRectangle.drawCanvas()
+    }
+</script>
+</body>
+</html>
