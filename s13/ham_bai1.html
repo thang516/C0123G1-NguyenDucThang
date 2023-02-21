@@ -6,28 +6,26 @@
 </head>
 <body>
 <script>
-    let arr = [];
 
-    function checkNumber(number) {
-        let countPrime = 0;
-        let n = 2;
-        while (countPrime < number) {
-            let count = 0;
-            for (let i = 0; i <= n; i++) {
-                if (i % n === 0) {
-                    count += 1;
-                }
-                if (count === 2) {
-                    countPrime++;
-                    arr.push(n);
-                }
+    function isPrime(number1) {
+
+        let count = 0;
+        for (let i = 1; i <= number1; i++) {
+            if (number1 % i === 0) {
+                count += 1;
             }
-            n++
+        }
+ 
+        return count === 2;
+    }
+
+    for (let i = 0; i < 10000; i++) {
+        if (isPrime(i)) {
+            document.writeln(i);
         }
     }
 
-    checkNumber(10000);
-    document.write(arr);
+
 </script>
 </body>
 </html>
