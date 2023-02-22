@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    class ElectricLamp {
+        status;
+
+        constructor(status) {
+            this.status = status;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        turnOn() {
+            this.status = true;
+        }
+
+        turnoff() {
+            this.status = false;
+        }
+
+    }
+
+    class SwitchButton {
+        lamp;
+        status;
+
+        constructor(lamp, status) {
+            this.lamp = lamp;
+            this.status = status;
+        }
+
+        connectToLamp(electricLamp) {
+            this.lamp = electricLamp;
+
+        }
+
+        getSwitchStatus() {
+            if (this.status) {
+                return "Công tắc đang bật";
+            }
+            return "Công tắc đang tắt";
+        }
+
+        switchOn() {
+            this.status = true;
+            this.lamp.turnOn();
+        }
+
+        switchOff() {
+            this.status = false;
+            this.lamp.turnoff();
+
+        }
+
+
+    }
+
+    let electricLamp = new ElectricLamp();
+    let switchButton = new SwitchButton();
+    switchButton.connectToLamp(electricLamp);
+
+    for (let i = 0; i < 10; i++) {
+        switchButton.switchOn();
+        document.write(switchButton.getSwitchStatus() + '<br>');
+
+        switchButton.switchOff();
+        document.write(switchButton.getSwitchStatus() + "<br>");
+
+    }
+
+</script>
+</body>
+</html>
