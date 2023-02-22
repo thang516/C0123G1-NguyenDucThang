@@ -7,34 +7,32 @@
 <body>
 <script>
     class Temperature {
-        Celsius;
-        kelvin;
-        Fahrenheit;
         constructor(celsius) {
-            this.Celsius = celsius;
+            while (celsius < -273) {
+                celsius = prompt('Nhiệt độ phải lớn hơn -273 ,mời nhập lại');
+            }
+            this.celsius = celsius;
         }
 
         getCelsius() {
-            return this.Celsius;
-        }
-
-        setCelsius(celsius) {
-            this.Celsius = celsius;
+            return this.celsius;
         }
 
         getFahrenheit() {
-            return this.Fahrenheit = this.Celsius * 1.8000 + 32.00;
+            return this.celsius * 1.8000 + 32.00;
         }
 
         getKelvin() {
-            return this.kelvin = this.Celsius + 273.15;
+            return this.celsius + 273.15;
         }
     }
-    let temperature= new Temperature(25);
-    temperature.getCelsius(25);
-    document.write('Độ Fahrenheit là :'+temperature.getFahrenheit());
+
+    let celsius = +prompt('Nhập độ C');
+    let temperature = new Temperature(celsius);
+    temperature.getCelsius();
+    document.write('Độ Fahrenheit là :' + temperature.getFahrenheit());
     document.write('<br/>');
-    document.write('Độ Kelvin là : '+temperature.getKelvin());
+    document.write('Độ Kelvin là : ' + temperature.getKelvin());
 </script>
 </body>
 </html>
