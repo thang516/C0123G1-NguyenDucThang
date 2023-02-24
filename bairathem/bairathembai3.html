@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    let input = prompt('Nhập độ dài mãng vô');
+    let arr = [];
+    for (let i = 0; i < input; i++) {
+        arr[i] = +prompt('Nhập phần tử trong mãng ' + (i + 1));
+    }
+    let space = arr[1] - arr[0];
+    result = true;
+    document.write(arr);
+
+    function checkNumber() {
+        let result = true;
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] - arr[i - 1] !== space) {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
+    console.log(checkNumber(arr));
+</script>
+</body>
+</html>
