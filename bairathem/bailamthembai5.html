@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+
+<script>
+    let input = prompt('Nhập độ dài mãng');
+    let arr = [];
+    for (let i = 0; i < input; i++) {
+        let checkExist = true;
+        do {
+            let nhap = prompt('Nhập mảng vô đi' + i);
+            if (arr.indexOf(nhap) === -1) {
+                arr.push(nhap);
+                checkExist = false;
+            }
+        }
+        while (checkExist);
+    }
+    console.log(arr);
+</script>
+</body>
+</html>
