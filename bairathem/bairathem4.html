@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<script>
+    let input = prompt('Nhập độ dài mãng vô');
+    let arr = [];
+    for (let i = 0; i < input; i++) {
+        arr[i] = +prompt('Nhập phần tử trong mãng ' + (i + 1));
+    }
+    document.write(arr);
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[arr.length - i - 1]) {
+            document.write(':Không đối xứng');
+            break;
+        } else {
+            count++;
+        }
+    }
+    if (count >= arr.length / 2) {
+        document.write(':Đối xứng');
+    }
+</script>
+</body>
+</html>
