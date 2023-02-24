@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>baiquanlisanpham</title>
+</head>
+<body>
+<script>
+    class Product {
+        nameProduct;
+        size;
+        color;
+        source;
+        price;
+
+        constructor(nameProduct, size, color, source, price) {
+            this.nameProduct = nameProduct;
+            this.size = size;
+            this.color = color;
+            this.source = source;
+            this.price = price;
+        }
+
+        getNameProduct() {
+            return this.nameProduct;
+        }
+
+        setNameProduct(nameProduct) {
+            this.nameProduct = nameProduct;
+        }
+
+        getSize() {
+            return this.size;
+        }
+
+        setSize(size) {
+            this.size = size;
+        }
+
+        getColor() {
+            return this.color;
+        }
+
+        setColor(color) {
+            this.color = color;
+        }
+
+        getSource() {
+            return this.source;
+        }
+
+        setSource(source) {
+            this.source = source;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+    }
+
+    let product1 = new Product('Sony Xperia', '165 x 71 x 8,2 mm', 'Đen or Trắng', 'USA', '35tr');
+    let product2 = new Product('Samsung Galaxy', '148,9 x 68,1 x 8 mm', 'Đen or hồng', 'Korea', '30tr');
+    let product3 = new Product('Nokia 6', '154 x 75.8 x 7.9 mm', 'Đen or Đỏ', 'USA', '10tr');
+    let product4 = new Product('Xiaomi Mi 5s Plus', "154.6 x 77.7 x 8 mm", 'Hồng or xanh ', 'China', '10tr');
+    let product5 = new product('Apple Iphone 8 Plus', '165 x 71 x 8,2 mm', 'Đen or Xanh', 'USA', '20tr');
+    let product6 = new Product('Fujitsu F-04E', '154 x 75.8 x 7.9 mm', 'Đen or xanh ', 'China', '15tr');
+    let productList = [];
+    productList.push(product1);
+    productList.push(product2);
+    productList.push(product3);
+    productList.push(product4);
+    productList.push(product5);
+    productList.push(product6);
+    displayProductList(productList);
+    function displayProductList(productList) {
+        let table = "<table border='1' style='border-collapse: collapse'>";
+        table += "<tr>" +
+            " <th>STT</th>" +
+            " <th>Tên sản phẩm</th>" +
+            " <th>Kích thước</th>" +
+            " <th>Màu sắc</th>" +
+            " <th> Nguồn gốc</th>" +
+            " <th>Giá cả</th>" +
+            "<tr/>";
+
+        table += "</table>"
+        document.getElementById(displayProductList()).innerHTML = table;
+
+    }
+
+
+</script>
+</body>
+</html>
