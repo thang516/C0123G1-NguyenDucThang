@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    let chieuCao = prompt('Nhập chiều cao');
+    let chieuRong = 2 * chieuCao - 1;
+    let middle = Math.ceil(chieuRong / 2);
+    console.log(middle);
+    for (let i = 1; i <= chieuCao; i++) {
+        for (let j = 1; j <= chieuRong; j++) {
+            if (chieuCao == i || j == middle - i + 1 || j == middle + i - 1) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;&nbsp;");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

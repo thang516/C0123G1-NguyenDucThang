@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+    <style>
+        label { size: 30px}
+    </style>
+</head>
+<body>
+
+<h1 style="color: darksalmon">Hệ thống quản lý học viên CODEGYM</h1>
+<form>
+    <div>
+        <label for="maHocVien">Mã học viên</label>
+        <input type="text" id="maHocVien" placeholder="Điền mã học viên "/>
+        <label for="ten">Tên</label>
+        <input type="text" id="ten" placeholder="Điền tên zô" maxlength="50"/>
+        <label for="lop">Lớp</label>
+        <input type="text" id="lop" placeholder="Nhập lớp"/>
+    </div>
+    <div>
+        <label for="email" style="margin-right: 40px">Email</label>
+        <input type="text" id="email" placeholder="Nhập email"/>
+        <label for="ngaySinh">Ngày Sinh</label>
+        <input type="date" id="ngaySinh" placeholder="Chọn ngày sinh"/>
+        <label for="module">Module</label>
+        <select id="module">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+
+    </div>
+    <button onclick="themHocVien()" type="button">Thêm</button>
+    <button type="reset">Làm sạch</button>
+    <button type="button" onclick="suaHocVien()">Xác nhận Sửa</button>
+</form>
+<hr>
+
+<div id="bangHocVien"></div>
+<script>
+    //Ma học viên,- Tên- Lớp- Email- Ngày sinh- Module
+
+    class HocVien {
+        maHocVien;
+        ten;
+        lop;
+        email;
+        ngaySinh;
+        module;
+
+        constructor(maHocVien, ten, lop, email, ngaySinh, module) {
+            this.maHocVien = maHocVien;
+            this.ten = ten;
+            this.lop = lop;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+            this.module = module;
+        }
+
+        getMaHocVien() {
+            return this.maHocVien;
+        }
+
+        setMaHocVien(maHocVien) {
+            this.maHocVien = maHocVien;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        getLop() {
+            return this.lop;
+        }
+
+        setLop(lop) {
+            this.lop = lop;
+        }
+
+        getEmail() {
+            return this.email;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        getNgaySinh() {
+            return this.ngaySinh;
+        }
+
+        setNgaySinh(ngaySinh) {
+            this.ngaySinh = ngaySinh;
+        }
+
+        getModule() {
+            return this.module;
+        }
+
+        setModule(module) {
+            this.module = module;
+        }
+    }
+
+    let hocVien1 = new HocVien('HV-0001', "Nguyễn Đức Thắng", "C0123G1", "Nguyenthangfa2001@gmail.com", "2023-02-12", "1");
+    let hocVien2 = new HocVien("Hv-0002", "Huỳnh Bá Vương", "C0123G1", 'bavuong123@gmail.com', '2023-02-22', "1");
+    let hocVien3 = new HocVien("Hv-0003", "Huỳnh Thị Trúc Quỳnh", 'C01234G1', "trucquynhcute@gmail.com", "2023-03-12", "2");
+    let hocVien4 = new HocVien("Hv-0004", "Lê Thị Phương  Thảo", "C0123G1", "phuongthaohihi@gmail.com", "2023-04-02", "1");
+    let danhSachHocSinh = [];
+    danhSachHocSinh.push(hocVien1, hocVien2, hocVien3, hocVien4);
+    hienThiDanhSach(danhSachHocSinh)
+    let viTriCapNhat=-1;
+    function hienThiDanhSach(danhSachHocSinh) {
+        let table = "<table border='1' style='border-collapse: collapse'>"
+        table += "<tr>" +
+            "<th>STT</th>" +
+            "<th>Mã học viên</th>" +
+            "<th>Tên học viên</th>" +
+            "<th>Lớp</th>" +
+            "<th>Email</th>" +
+            "<th>Ngày Sinh</th>" +
+            "<th>Module</th>" +
+            "<th colspan='2'>Thao tác</th>" +
+            "</tr>"
+        for (let i = 0; i < danhSachHocSinh.length; i++) {
+            table += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + danhSachHocSinh[i].maHocVien + "</td>" +
+                "<td>" + danhSachHocSinh[i].ten + "</td>" +
+                "<td>" + danhSachHocSinh[i].lop + "</td>" +
+                "<td>" + danhSachHocSinh[i].email + "</td>" +
+                "<td>" + danhSachHocSinh[i].ngaySinh + "</td>" +
+                "<td>" + danhSachHocSinh[i].module + "</td>" +
+                "<td><button onclick=\"xoaHocVien(" + i + ")\"> Xóa </button></td>" +
+                "<td><button onclick=\"layThongTin(" + i + ")\">Sửa</button></td>" +
+                "</tr>"
+        }
+        table += "</table>"
+        document.getElementById('bangHocVien').innerHTML = table;
+    }
+
+    function xoaHocVien(viTriHocVien) {
+        const xacNhan = confirm('Bạn có chắc là xóa học viên ' + danhSachHocSinh[viTriHocVien].maHocVien + "?");
+        if (xacNhan) {
+            danhSachHocSinh.splice(viTriHocVien, 1);
+            alert('Bạn đã xóa học viên thành công');
+            hienThiDanhSach(danhSachHocSinh);
+        } else {
+            alert('Bạn đã không xóa');
+        }
+    }
+
+    // maHocVien,ten,lop,email,ngaySinh,module
+    // maHocVien, ten, lop, email, ngaySinh, module
+    function themHocVien() {
+        let mahocVien = document.getElementById("maHocVien").value;
+        let ten = document.getElementById("ten").value;
+        let lop = document.getElementById("lop").value;
+        let email = document.getElementById("email").value;
+        let ngaySinh = document.getElementById("ngaySinh").value;
+        let module = document.getElementById("module").value;
+
+        if(mahocVien!== ''&&ten!==''&&lop!== ''&&email!== ''&&ngaySinh !==''&& module !==''){
+            let hocVienMoi= new HocVien(mahocVien,ten,lop,email,ngaySinh,module);
+            danhSachHocSinh.push(hocVienMoi);
+            hienThiDanhSach(danhSachHocSinh);
+            lamSach();
+        }else{
+            alert('bạn cần Điền Đủ Thông Tin trước khi thêm ');
+        }
+
+    }
+    function layThongTin(viTriHocVien) {
+        let hocVien=danhSachHocSinh[viTriHocVien];
+        console.log(hocVien.ngaySinh)
+
+        viTriCapNhat=viTriHocVien;
+        document.getElementById("maHocVien").value=hocVien.maHocVien;
+        document.getElementById("ten").value=hocVien.ten;
+        document.getElementById("lop").value=hocVien.lop;
+        document.getElementById("email").value=hocVien.email;
+        document.getElementById("ngaySinh").value=hocVien.ngaySinh;
+        document.getElementById("module").value=hocVien.module;// Module1
+
+    }
+    function suaHocVien() {
+        let mahocVien = document.getElementById("maHocVien").value;
+        let ten = document.getElementById("ten").value;
+        let lop = document.getElementById("lop").value;
+        let email = document.getElementById("email").value;
+        let ngaySinh = document.getElementById("ngaySinh").value;
+        let module = document.getElementById("module").value;
+
+        danhSachHocSinh[viTriCapNhat].maHocVien=mahocVien;
+        danhSachHocSinh[viTriCapNhat].ten=ten;
+        danhSachHocSinh[viTriCapNhat].lop=lop;
+        danhSachHocSinh[viTriCapNhat].email=email;
+        danhSachHocSinh[viTriCapNhat].ngaySinh=ngaySinh;
+        danhSachHocSinh[viTriCapNhat].module=module;
+        hienThiDanhSach(danhSachHocSinh);
+        viTriCapNhat=-1;
+    lamSach()
+    }
+    function lamSach() {
+        document.getElementById("maHocVien").value='';
+        document.getElementById("ten").value='';
+        document.getElementById("lop").value='';
+        document.getElementById("email").value='';
+        document.getElementById("ngaySinh").value='';
+        document.getElementById("module").value='';
+    }
+</script>
+</body>
+</html>

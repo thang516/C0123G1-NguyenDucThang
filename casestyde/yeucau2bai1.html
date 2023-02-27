@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<script>
+    function inHinh(soLuong) {
+        for (let i = 1; i <= soLuong; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (i == 1 || i == soLuong) {
+                    document.write('*');
+                } else {
+                    if (j == 1 || j == i) {
+                        document.write('*');
+                    } else {
+                        document.write("&nbsp;&nbsp;");
+                    }
+                }
+
+            }
+            document.write('<br>');
+        }
+    }
+
+    inHinh(5);
+</script>
+</body>
+</html>

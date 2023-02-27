@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    let arr1 = [7, 2, 5, 3, 5, 3];
+    let arr2 = [7, 2, 5, 4, 6, 3, 5, 3];
+    let result = [];
+    for (let i = 0; i < arr2.length; i++) {
+        let flag = false;
+        for (let j = 0; j < arr1.length; j++) {
+            if (arr2[i] === arr1[j]) {
+                flag = true;
+                break;
+            }
+        }
+        if (!flag) {
+            result.push(arr2[i]);
+        }
+    }
+
+    let temp = 0;
+    for (let i = 0; i < result.length; i++) {
+        for (let j = i + 1; j < result.length; j++) {
+            if (result[i] > result[j]) {
+                temp = result[i];
+                result[i] = result[j];
+                result[j] = temp;
+            }
+        }
+    }
+    console.log(result);
+
+
+</script>
+</body>
+</html>

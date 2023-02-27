@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<h2>Menu Quán</h2>
+<div>1.Cafe (25k)</div>
+<div>2.Cam vắt (50K)</div>
+<div>3.Nước ép cà rốt (50K)</div>
+<div>4.Nước ép cà chua (45K)</div>
+<div>5.Nước lọc (20K)</div>
+<div>6.Nước dừa (35K)</div>
+<div>7.Không chọn</div>
+<script>
+    let chonMon;
+    let soLuong;
+
+    do {
+        chonMon = +prompt('Nhìn vào thực đơn mời quý khách chọn món giúp mình ' + "\n" +
+            "1.Cafe (25k)" + "\n" +
+            " 2.Cam vắt (50K)" + "\n" +
+            " 3.Nước ép cà rốt (50K)" + "\n" +
+            "4.Nước ép cà chua (45K)" + "\n" +
+            "5.Nước lọc (20K)" + "\n" +
+            "6.Nước dừa (35K)" + "\n" +
+            "7.Không chọn");
+        switch (chonMon) {
+            case 1: {
+                alert('Bạn đã chọn cafe');
+                break;
+            }
+            case 2: {
+                alert('Bạn đã chọn cam vắt');
+                break;
+            }
+            case 3: {
+                alert("Bạn đã chọn nước ép cà rốt");
+                break;
+            }
+            case 4: {
+                alert("Bạn đã chọn nước ép cà chua");
+                break;
+            }
+            case 5: {
+                alert("Bạn đã chọn nước lọc");
+                break;
+            }
+            case 6: {
+                alert("Bạn đã chọn nước dừa");
+                break;
+            }
+            case 7: {
+                break;
+            }
+            default : {
+                alert("Mời bạn chọn lại thức uống có trong MENU");
+            }
+        }
+        if (chonMon < 7) {
+            soLuong = prompt('Bạn muốn mua mấy ly ');
+
+        }
+        switch (chonMon) {
+            case 1: {
+                alert('Tiền bạn phải trả là :' + 25 * soLuong + "K");
+                break;
+            }
+            case 2: {
+                alert('Tiền bạn phải trả cho nước cam vắt là :' + 50 * soLuong + "K");
+                break;
+            }
+            case 3: {
+                alert("Tiền bạn phải trả cho nước ép cà rốt là :" + 50 * soLuong + "K");
+                break;
+            }
+            case 4: {
+                alert("Tiền bạn phải trả cho nước ép cà chua là :" + 45 * soLuong + "K");
+                break;
+            }
+            case 5: {
+                alert("Tiền bạn phải trả cho nước lọc là :" + 20 * soLuong + "K");
+                break;
+            }
+            case 6: {
+                alert("Tiền bạn phải trả cho nước dừa là :" + 35 * soLuong + "K");
+                break;
+            }
+            case 7: {
+                break;
+            }
+            default : {
+                alert("Mời bạn chọn lại thức uống có trong MENU");
+            }
+        }
+
+    }
+
+    while (chonMon != 7);
+    alert("Cảm ơn bạn đã ủng hộ quán ^ . ^  ");
+</script>
+</body>
+</html>

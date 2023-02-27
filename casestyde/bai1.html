@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<script>
+    let nhapLuong = prompt('Nhập lương nhân viên vô');
+    let luongRong = 0;
+
+    function tinhThue(so) {
+        if (so === 15000000) {
+            return luongRong = so - ((so / 100) * 20);
+        } else {
+            if (so >= 7000000 || so < 15000000) {
+                return luongRong = so - ((so / 100) * 10);
+            }
+            return luongRong = so - ((so / 100) * 5);
+        }
+    }
+
+    let result = tinhThue(nhapLuong);
+    document.writeln('Số lương bạn nhận sau khi trừ thuế là:' + result + "");
+
+</script>
+</body>
+</html>

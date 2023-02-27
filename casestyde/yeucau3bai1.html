@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yeucau3</title>
+</head>
+<body>
+<script>
+    let input = +prompt('Nhập độ dài mảng  ');
+    let arr = [];
+    let nhapPhanTu;
+    for (let i = 0; i < input; i++) {
+        do {
+            nhapPhanTu = prompt("Nhập phần tử vào" + (i + 1));
+            if (!Number.isNaN(+nhapPhanTu)) {
+                arr.push(+nhapPhanTu);
+            }
+        }
+        while (Number.isNaN(+nhapPhanTu)) ;
+    }
+
+    function prefixSums(arr) {
+        let arrB = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            let sum = 0
+            for (let j = 0; j < i + 1; j++) {
+                sum += arr[j];
+            }
+            arrB[i] = sum;
+            sum = 0;
+        }
+        return arrB;
+    }
+
+    let result = prefixSums(arr);
+    document.write(result + '');
+</script>
+</body>
+</html>

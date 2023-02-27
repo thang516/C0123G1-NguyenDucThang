@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    let numerators = [9, 5, 2, 5, 6];
+    let denominators = [2, 6, 3, 4, 3];
+    let result = 0;
+    let max = numerators[0] / denominators[0];
+    for (let i = 0; i < numerators.length; i++) {
+
+        if (numerators[i] / denominators[i] > max) {
+            max = numerators[i] / denominators[i];
+            result = i;
+        }
+    }
+    console.log(result);
+</script>
+</body>
+</html>

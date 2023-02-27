@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+
+    let kiTuNguyenAm = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E'];
+    let nhapKiTu = '';
+    do {
+        nhapKiTu = prompt('Nhập kí tự bạn cần kiểm tra (Nếu là số là bạn nhập lại nge)');
+    }
+    while (!Number.isNaN(Number.parseInt(nhapKiTu)));
+
+    function kiemTraChuCai(kiTuKiemTra) {
+        let result = false;
+        for (let i = 0; i < kiTuNguyenAm.length; i++) {
+            if (kiTuKiemTra == kiTuNguyenAm[i]) {
+                result = true;
+                break;
+            }
+        }
+        if (result) {
+            document.write('Kí tự bạn nhập vô là  nguyên âm :  ' + kiTuKiemTra);
+        } else {
+            document.write('Kí tự bạn nhập vô là phụ âm : ' + kiTuKiemTra);
+        }
+    }
+
+    kiemTraChuCai(nhapKiTu);
+</script>
+</body>
+</html>

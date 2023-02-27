@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    let chieuCao = prompt('Nhập chiều cao bạn muốn vào ');
+    let chieuRong = 2 * chieuCao - 1;
+    let middle = Math.ceil(chieuRong / 2);
+    console.log(middle)
+    for (let i = 1; i <= chieuCao; i++) {
+        for (let j = 1; j <= chieuRong; j++) {
+            if (j < middle - i + 1 || j > middle + i - 1) {
+                document.write("&nbsp;&nbsp;");
+            } else {
+                document.write("*");
+            }
+        }
+        document.write('<br>');
+    }
+
+</script>
+</body>
+</html>
