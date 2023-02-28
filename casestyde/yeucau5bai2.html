@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    let doc = prompt('Nhập độ dài ');
+    let ngang = prompt('Nhập độ đài ');
+    let arr = [];
+    let arrNew = [];
+    for (let i = 0; i < doc; i++) {
+        let mangDoc = [];
+        for (let j = 0; j < ngang; j++) {
+            let nhap = +prompt('Nhập các phần tử zodiê');
+            mangDoc.push(nhap);
+        }
+        arr.push(mangDoc);
+    }
+    for (let i = 0; i < doc; i++) {
+        for (let j = 0; j < ngang; j++) {
+            if (kiemTraSo(arr[i][j])) {
+                arrNew.push(arr[i][j]);
+            }
+        }
+    }
+
+    function kiemTraSo(numb) {
+        let count = 0;
+        for (let i = 1; i <= numb; i++) {
+            if (numb % i === 0) {
+                count += 1;
+            }
+        }
+        if (count === 2) {
+            return true;
+
+        }
+        return false;
+    }
+
+    document.write(arrNew);
+</script>
+</body>
+</html>

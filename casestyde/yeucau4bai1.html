@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<script>
+    let ten = prompt('Nhập tên vô ');
+    let arr = [];
+    let chuoi='';
+    function kiemTraKiTu(str) {
+        let mangTen = str.split(" ");
+        for (let i = 0; i < mangTen.length; i++) {
+            if (mangTen[i] !== "") {
+                arr.push(mangTen[i].toLowerCase());
+            }
+        }
+        let max=arr[0].length;
+        chuoi=arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1);
+            if(arr[i].length > max){
+                max=arr[i].length;
+                chuoi=arr[i];
+            }
+        }
+        return arr.join(" ");
+    }
+    let result = kiemTraKiTu(ten);
+    document.write(result);
+    document.write("ki tu dai nhat " +chuoi);
+</script>
+</body>
+</html>

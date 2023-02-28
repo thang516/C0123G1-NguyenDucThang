@@ -16,7 +16,7 @@
 <script>
     let chonMon;
     let soLuong;
-
+    let luuTru =0;
     do {
         chonMon = +prompt('Nhìn vào thực đơn mời quý khách chọn món giúp mình ' + "\n" +
             "1.Cafe (25k)" + "\n" +
@@ -64,27 +64,33 @@
         }
         switch (chonMon) {
             case 1: {
-                alert('Tiền bạn phải trả là :' + 25 * soLuong + "K");
+                luuTru = luuTru + (25 * soLuong)
+                alert('Tiền bạn phải trả là :' + luuTru + "K");
                 break;
             }
             case 2: {
-                alert('Tiền bạn phải trả cho nước cam vắt là :' + 50 * soLuong + "K");
+                luuTru = luuTru + ( 50 * soLuong )
+                alert('Tiền bạn phải trả cho nước cam vắt là :' + luuTru+ "K");
                 break;
             }
             case 3: {
-                alert("Tiền bạn phải trả cho nước ép cà rốt là :" + 50 * soLuong + "K");
+                luuTru = luuTru + (50 * soLuong )
+                alert("Tiền bạn phải trả cho nước ép cà rốt là :" + luuTru + "K");
                 break;
             }
             case 4: {
-                alert("Tiền bạn phải trả cho nước ép cà chua là :" + 45 * soLuong + "K");
+                luuTru = luuTru + ( 45 * soLuong)
+                alert("Tiền bạn phải trả cho nước ép cà chua là :" +luuTru + "K");
                 break;
             }
             case 5: {
-                alert("Tiền bạn phải trả cho nước lọc là :" + 20 * soLuong + "K");
+                luuTru = luuTru + (20 * soLuong)
+                alert("Tiền bạn phải trả cho nước lọc là :" +luuTru + "K");
                 break;
             }
             case 6: {
-                alert("Tiền bạn phải trả cho nước dừa là :" + 35 * soLuong + "K");
+                luuTru = luuTru + (35 * soLuong)
+                alert("Tiền bạn phải trả cho nước dừa là :" + luuTru + "K");
                 break;
             }
             case 7: {

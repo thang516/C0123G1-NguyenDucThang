@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai1</title>
+</head>
+<body>
+<script>
+    let doc = +prompt('Nhập từ bàn phím độ dài ');
+    let ngang = +prompt('Nhập từ bàn phím độ dài');
+    let arr = [];
+    for (let i = 0; i < doc; i++) {
+        let arrNgang = [];
+        for (let j = 0; j < ngang; j++) {
+            let nhap = +prompt('Nhập các phần tử trong mãng');
+            arrNgang.push(nhap);
+        }
+        arr.push(arrNgang);
+    }
+    console.log(arr);
+
+    function tinhTong(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] % 2 === 0) {
+                    sum = sum + arr[i][j];
+                }
+            }
+
+        }
+        return sum;
+    }
+
+    console.log(tinhTong(arr));
+</script>
+</body>
+</html>

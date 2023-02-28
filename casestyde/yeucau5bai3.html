@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+
+    let doc = +prompt('Nhập độ dài lần thứ 1');
+    let ngang = +prompt('Nhập chieu dài lần 2');
+    let arr = [];
+    for (let i = 0; i < doc; i++) {
+        let mangDoc = [];
+        for (let j = 0; j < ngang; j++) {
+            let nhap = +prompt('Các phần tử trong mảng ? Nhập ');
+            mangDoc.push(nhap);
+        }
+        arr.push(mangDoc);
+    }
+
+    function kiemTra(arr) {
+        let max = arr[0][0];
+        let min = arr[0][0];
+        let result = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] > max) {
+                    max = arr[i][j];
+                } else {
+                    if (arr[i][j] < min) {
+                        min = arr[i][j];
+                    }
+                }
+            }
+        }
+        result.push(max, min);
+        return result;
+    }
+
+    let result = kiemTra(arr);
+    document.write('Số lớn nhất là: ' + result[0] + "<br>");
+    document.write('Số nhỏ nhất là :' + result[1]);
+</script>
+</body>
+</html>
