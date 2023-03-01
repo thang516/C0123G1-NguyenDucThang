@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <title>bai1</title>
     <style>
         label { size: 30px}
@@ -31,9 +31,9 @@
         </select>
 
     </div>
-    <button onclick="themHocVien()" type="button">Thêm</button>
+    <button onclick="themHocVien()" type="button" id="btnCreate">Thêm</button>
     <button type="reset">Làm sạch</button>
-    <button type="button" onclick="suaHocVien()">Xác nhận Sửa</button>
+    <button type="button" id="btnUpdate" onclick="suaHocVien()">Xác nhận Sửa</button>
 </form>
 <hr>
 
@@ -154,9 +154,6 @@
             alert('Bạn đã không xóa');
         }
     }
-
-    // maHocVien,ten,lop,email,ngaySinh,module
-    // maHocVien, ten, lop, email, ngaySinh, module
     function themHocVien() {
         let mahocVien = document.getElementById("maHocVien").value;
         let ten = document.getElementById("ten").value;
@@ -164,6 +161,10 @@
         let email = document.getElementById("email").value;
         let ngaySinh = document.getElementById("ngaySinh").value;
         let module = document.getElementById("module").value;
+
+        // document.getElementById("btnCreate").style.display = 'block';
+        // document.getElementById("btnCreate").style.display = 'none';
+
 
         if(mahocVien!== ''&&ten!==''&&lop!== ''&&email!== ''&&ngaySinh !==''&& module !==''){
             let hocVienMoi= new HocVien(mahocVien,ten,lop,email,ngaySinh,module);
@@ -177,15 +178,18 @@
     }
     function layThongTin(viTriHocVien) {
         let hocVien=danhSachHocSinh[viTriHocVien];
-        console.log(hocVien.ngaySinh)
-
         viTriCapNhat=viTriHocVien;
         document.getElementById("maHocVien").value=hocVien.maHocVien;
         document.getElementById("ten").value=hocVien.ten;
         document.getElementById("lop").value=hocVien.lop;
         document.getElementById("email").value=hocVien.email;
         document.getElementById("ngaySinh").value=hocVien.ngaySinh;
-        document.getElementById("module").value=hocVien.module;// Module1
+        document.getElementById("module").value=hocVien.module;
+
+        // mở nút sửa, tắt nút thêm
+        document.getElementById("btnUpdate").style.display = 'block';
+        document.getElementById("btnCreate").style.display = 'none';
+
 
     }
     function suaHocVien() {
@@ -214,6 +218,10 @@
         document.getElementById("ngaySinh").value='';
         document.getElementById("module").value='';
     }
+    window.onload = function () {
+        document.getElementById("btnUpdate").style.display = 'none';
+    }
+
 </script>
 </body>
 </html>
